@@ -726,3 +726,23 @@ The final stage when working with databases in R is to disconnect, e.g.:
 ```{r, results="hide", messages=FALSE, warning=FALSE}
 dbDisconnect(conn = con)
 ```
+ 
+#### Exercises {-}
+
+Follow the worked example below to create and query a database on land prices in the UK using **dplyr** as a front end to an SQLite database. 
+The first stage is to read-in the data:
+
+```{r}
+# See help("land_df", package="efficient") for details
+data(land_df, package="efficient")
+```
+
+The next stage is to create an SQLite database to hold the data:
+
+```{r}
+# install.packages("RSQLite") # Requires RSQLite package
+my_db = src_sqlite("land.sqlite3", create = TRUE)
+land_sqlite = copy_to(my_db, land_df, indexes = list("postcode", "price")) 
+```
+
+What class is the new object `land_sqlite`?
