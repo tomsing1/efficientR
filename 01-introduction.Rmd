@@ -135,7 +135,7 @@ In some ways benchmarks can be seen as the building blocks of profiles. Profilin
 
 Modifying elements from one benchmark to the next and recording the results after the alteration enables us to determine the fastest piece of code. Benchmarking is important in the efficient programmer's tool-kit: you may *think* that your code is faster than mine but benchmarking allows you to *prove* it. The easiest way to benchmark a function is to use `system.time()`. However it is important to remember that we are taking a sample. We wouldn't expect a single person in London to be representative of the entire UK population, similarly, a single benchmark provides us with a single observation on our functions behaviour. Therefore, we'll need to repeat the timing many times with a loop. 
 
-An alternative way of benchmarking, is via the flexible **microbenchmark** package. This allows us to easily run each function multiple times (by default $100$), enabling the user to detect microsecond differences in code performance. We then get a convenient summary of the results: the minimum/maximum, lower/upper quartiles and the mean/median times. We suggest focusing on the median time to get a feel for the standard time and the quartiles to understand the variability.
+An alternative way of benchmarking is via the flexible **microbenchmark** package. This allows us to easily run each function multiple times (by default $100$), enabling the user to detect microsecond differences in code performance. We then get a convenient summary of the results: the minimum/maximum, lower/upper quartiles and the mean/median times. We suggest focusing on the median time to get a feel for the standard time and the quartiles to understand the variability.
 
 ### Benchmarking example
 
